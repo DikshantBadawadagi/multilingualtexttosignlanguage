@@ -40,11 +40,11 @@ videoState) { @if (!videoState.src) {
     }
   </div>
 </ng-template> -->
-<ng-container *ngIf="(inputMode$ | async) as inputMode">
+<ng-container *ngIf="inputMode$ | async as inputMode">
   <ng-container [ngSwitch]="inputMode">
     <!-- Case: 'upload' -->
     <ng-container *ngSwitchCase="'upload'">
-      <ng-container *ngIf="(videoState$ | async) as videoState">
+      <ng-container *ngIf="videoState$ | async as videoState">
         <ng-container *ngIf="!videoState.src">
           <app-upload></app-upload>
         </ng-container>
@@ -71,7 +71,7 @@ videoState) { @if (!videoState.src) {
     <app-sign-writing></app-sign-writing>
 
     <!-- Spoken Language Translation -->
-    <ng-container *ngIf="(spokenLanguageText$ | async) as translation">
+    <ng-container *ngIf="spokenLanguageText$ | async as translation">
       <div class="translation-text">
         <div>{{ translation }}</div>
 
